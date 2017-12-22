@@ -1,7 +1,7 @@
 <%= form_tag(controller: "searches", action: "searches") do %>
  <div class="field">
-   <p>名前<%= text_field_tag("find") %></p>
-   <p>背番号<%= number_field_tag("num") %></p>
+   <p>名前：<%= text_field_tag("find") %></p>
+   <p>背番号：<%= number_field_tag("num") %></p>
   <p><%= check_box_tag("pitcher") %>
      <%= label_tag("pitcher","投手") %></p>
   <p><%= check_box_tag("catcher") %>
