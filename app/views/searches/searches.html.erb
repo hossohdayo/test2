@@ -1,0 +1,28 @@
+<%= form_tag(controller: "searches", action: "searches") do %>
+ <div class="field">
+   <p>名前<%= text_field_tag("find") %></p>
+   <p>背番号<%= number_field_tag("num") %></p>
+  <p><%= check_box_tag("pitcher") %>
+     <%= label_tag("pitcher","投手") %></p>
+  <p><%= check_box_tag("catcher") %>
+     <%= label_tag("catcher","捕手") %></p>
+  <p><%= check_box_tag("infielder") %>
+     <%= label_tag("infielder","内野手") %></p>
+  <p><%= check_box_tag("outfielder") %>
+     <%= label_tag("outfielder","外野手") %></p>
+     <%#= select_tag('s1', options_for_select(["投手", "捕手", "内野手", "外野手"]),{size:4, multiple: true}) %>
+ <%= submit_tag '検索' %>
+ </div>
+ <% end %>
+ <table>
+   <tr>
+     <th>ID</th><th>Name</th><th>shirtnam</th><th>position</th>
+   </tr>
+   <% @test2.each do |obj| %>
+   <tr>
+     <td><%= obj.id %></td><td><%= obj.name %></td><td><%= obj.shirtnam %></td><td><%= obj.position %></td>
+   </tr>
+   <% end %>
+ </table>
+ <%= @msg %>
+ <%#= @msg2 %>
